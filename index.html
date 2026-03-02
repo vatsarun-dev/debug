@@ -12,6 +12,7 @@
   </head>
   <body>
     <div class="container">
+        <!-- Header -->
       <header>
         <div class="logo">
           <span class="logo-icon">💎</span>
@@ -22,7 +23,7 @@
           <h2 id="total-balance">$0.00</h2>
         </div>
       </header>
-
+      <!-- Stats Grid -->
       <div class="stats-grid">
         <div class="stat-item income">
           
@@ -39,7 +40,7 @@
           </div>
         </div>
       </div>
-
+      <!-- Controls -->
       <div class="controls">
         <div class="search-bar">
           <input
@@ -50,7 +51,7 @@
         </div>
         <button class="btn-add" id="openModal">+ ADD TRANSACTION</button>
       </div>
-
+      <!-- Transaction List -->
       <div class="transaction-section">
         <div class="section-header">
           <h2 style="font-size:0.8rem">RECENT TRANSACTION</h2>
@@ -61,9 +62,10 @@
           </div>
         </div>
         <ul id="transaction-list" class="transaction-list"></ul>
+          <!-- Transactions will be injected here -->
       </div>
     </div>
-
+    <!-- Modal Form -->
     <div class="modal-overlay" id="modalOverlay">
       <div class="modal-content">
         <div class="modal-header">
