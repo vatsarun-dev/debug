@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FinanceFlow | Premium Budget Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">
+          <span class="logo-icon">💎</span>
+          <h1>FinanceFlow</h1>
+        </div>
+        <div class="balance-card">
+          <p>TOTAL BALANCE</p>
+          <h2 id="total-balance">$0.00</h2>
+        </div>
+      </header>
+
+      <div class="stats-grid">
+        <div class="stat-item income">
+          
+          <div class="stat-info">
+            <span>INCOME</span>
+            <h3 id="total-income">$0.00</h3>
+          </div>
+        </div>
+        <div class="stat-item expense">
+         
+          <div class="stat-info">
+            <span>EXPENSE</span>
+            <h3 id="total-expense">$0.00</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="search-bar">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search transactions..."
+          />
+        </div>
+        <button class="btn-add" id="openModal">+ ADD TRANSACTION</button>
+      </div>
+
+      <div class="transaction-section">
+        <div class="section-header">
+          <h2 style="font-size:0.8rem">RECENT TRANSACTION</h2>
+          <div class="filter-btns">
+            <a href="#" class="filter-btn active" data-filter="all">ALL</a>
+            <a href="#" class="filter-btn" data-filter="income">INCOME</a>
+            <a href="#" class="filter-btn" data-filter="expense">EXPENSES</a>
+          </div>
+        </div>
+        <ul id="transaction-list" class="transaction-list"></ul>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>NEW TRANSACTION</h2>
+          <button class="close-btn" id="closeModal" type="button">&times;</button>
+        </div>
+        <form id="transaction-form">
+          <div class="form-group">
+            <label for="text">DESCRIPTION</label>
+            <input
+              type="text"
+              id="text"
+              placeholder="e.g. Salary, Groceries"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="amount">AMOUNT ($)</label>
+            <input
+              type="number"
+              id="amount"
+              step="0.01"
+              placeholder="0.00"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>TYPE</label>
+            <div class="type-selector">
+              <button
+                type="button"
+                class="type-btn active"
+                data-type="income"
+                id="incomeTypeBtn"
+              >
+                INCOME
+              </button>
+              <button
+                type="button"
+                class="type-btn"
+                data-type="expense"
+                id="expenseTypeBtn"
+              >
+                EXPENSE
+              </button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="category">CATEGORY</label>
+            <select id="category">
+              <option value="salary">Salary</option>
+              <option value="food">Food</option>
+              <option value="entertainment">Entertainment</option>
+              <option value="shopping">Shopping</option>
+              <option value="utilities">Utilities</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-submit">SAVE TRANSACTION</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
